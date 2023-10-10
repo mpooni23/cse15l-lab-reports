@@ -12,6 +12,9 @@ When we ls without an argument, it lists the set of folders in the current direc
 When we cat without an argument, it prints an empty string since we haven't passed in any file whose contents need to be printed.\
 ![Image](https://cdn.discordapp.com/attachments/1095905756118778001/1161141378223460403/Screenshot_2023-10-09_at_8.21.03_PM.png?ex=6537382d&is=6524c32d&hm=98b0c7d0753e20f5acc82ca296db1a123a500637f7c4be698edf37d886761b2f&)
 
+**2) Example of using the command with a path to a directory as an argument : **\
+**cd :**\
+
 
 
 
