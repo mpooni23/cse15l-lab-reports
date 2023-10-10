@@ -16,6 +16,14 @@ When we cat without an argument, it prints an empty string since we haven't pass
 **cd :**\
 When we cd using a path to a directory as an argument we get into that directory. For eg in this case, we go from the main directory to the Downloads directory.\
 ![Image](https://cdn.discordapp.com/attachments/1095905756118778001/1161142346793111623/Screenshot_2023-10-09_at_8.24.49_PM.png?ex=65373914&is=6524c414&hm=3aa703700732603b322a1b9983b79225a0099038d8ca96120b1af544ea848ff3&)
+**ls :**\
+When we ls with a path to a directory as an argument, it prints the list of folders in the directory which we pass as an argument.\
+![Image](https://cdn.discordapp.com/attachments/1095905756118778001/1161143004208304148/Screenshot_2023-10-09_at_8.27.29_PM.png?ex=653739b1&is=6524c4b1&hm=4a3edd4dd03e7085aa3cedec3a1fa78aa801a34198b587de46e5fb1478af61fe&)
+**cat: **\
+When we cat with a path to a directory as an argument, it throws an error. Since cat only prints contents of files and not contents of a directory. It throws an error saying "Is a directory"\
+![Image](https://cdn.discordapp.com/attachments/1095905756118778001/1161143399412412436/Screenshot_2023-10-09_at_8.29.04_PM.png?ex=65373a0f&is=6524c50f&hm=d4011eb0c538f9d98c038842ac66ba7240bbf2073e7aa92b14f4a77f90901c12&)
+**3) Example of using the command with a path to a file as an argument : **\
+
 
 
 
