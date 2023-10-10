@@ -12,7 +12,7 @@ When we ls without an argument, it lists the set of folders in the current direc
 When we cat without an argument, it prints an empty string since we haven't passed in any file whose contents need to be printed.\
 ![Image](https://cdn.discordapp.com/attachments/1095905756118778001/1161141378223460403/Screenshot_2023-10-09_at_8.21.03_PM.png?ex=6537382d&is=6524c32d&hm=98b0c7d0753e20f5acc82ca296db1a123a500637f7c4be698edf37d886761b2f&)
 
-**2) Example of using the command with a path to a directory as an argument : **\
+**2) Example of using the command with a path to a directory as an argument :**\
 **cd :**\
 When we cd using a path to a directory as an argument we get into that directory. For eg in this case, we go from the main directory to the Downloads directory.\
 ![Image](https://cdn.discordapp.com/attachments/1095905756118778001/1161142346793111623/Screenshot_2023-10-09_at_8.24.49_PM.png?ex=65373914&is=6524c414&hm=3aa703700732603b322a1b9983b79225a0099038d8ca96120b1af544ea848ff3&)
@@ -25,7 +25,7 @@ When we ls with a path to a directory as an argument, it prints the list of fold
 When we cat with a path to a directory as an argument, it throws an error. Since cat only prints contents of files and not contents of a directory. It throws an error saying "Is a directory"\
 ![Image](https://cdn.discordapp.com/attachments/1095905756118778001/1161143399412412436/Screenshot_2023-10-09_at_8.29.04_PM.png?ex=65373a0f&is=6524c50f&hm=d4011eb0c538f9d98c038842ac66ba7240bbf2073e7aa92b14f4a77f90901c12&)
 
-**3) Example of using the command with a path to a file as an argument : **\
+**3) Example of using the command with a path to a file as an argument :**\
 **cd :**\
 When we cd with a path to a file as an argument it doesn't work since cd changes only to directories and not to files and hence, we get an error saying "Not a directory" \
 ![Image](https://cdn.discordapp.com/attachments/1095905756118778001/1161145126492569701/Screenshot_2023-10-09_at_8.35.59_PM.png?ex=65373bab&is=6524c6ab&hm=cdb2b7c85fb111b86cc3d1cb437a094aa1b4f153cf6747ed5ad6717507ec68b9&)
