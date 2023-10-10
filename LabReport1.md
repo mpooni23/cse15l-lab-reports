@@ -14,6 +14,9 @@ When we cat without an argument, it prints an empty string since we haven't pass
 
 **2) Example of using the command with a path to a directory as an argument : **\
 **cd :**\
+When we cd using a path to a directory as an argument we get into that directory. For eg in this case, we go from the main directory to the Downloads directory.\
+![Image](https://cdn.discordapp.com/attachments/1095905756118778001/1161142346793111623/Screenshot_2023-10-09_at_8.24.49_PM.png?ex=65373914&is=6524c414&hm=3aa703700732603b322a1b9983b79225a0099038d8ca96120b1af544ea848ff3&)
+
 
 
 
