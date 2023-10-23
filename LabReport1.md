@@ -3,6 +3,7 @@
 # **1. An example of using the cd command with no arguments**
 
 ![Image](cd with no arguments.png)
+
 When we cd without an argument we stay in the same directory. The working directory is /users/manasapooni when the command was run. When you run the cd command without arguments the working directory would change to the home directory of the user. The ouput is not an error.
 
 # **2. An example of using the cd command with a path to the directory as an argument**
