@@ -2,7 +2,7 @@
 
 # **1. An example of using the cd command with no arguments**
 
-'''
+```
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -33,6 +33,7 @@ class Handler2 implements URLHandler {
         }
         return "404 Not Found!";
     }
+    
     public String find(String searchString) {
         ArrayList<String> temp = new ArrayList<String>();
         for (int index=0; index < s.size(); index++){
@@ -40,7 +41,7 @@ class Handler2 implements URLHandler {
                 temp.add(s.get(index));
             }
         }
-        return temp.toString();
+        return String.format(temp.toString());
     }
 }
 
@@ -56,7 +57,8 @@ class SearchEngine {
         Server.start(port, new Handler2());
     }
 }
-'''
+
+```
 
 ![Image](cd with no arguments.png)
 
