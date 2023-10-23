@@ -1,6 +1,6 @@
 # Week 3 - Servers and SSH Keys
 
-# **1. An example of using the cd command with no arguments**
+# **1. Code for StringServer.java**
 
 ```
 import java.io.IOException;
