@@ -71,8 +71,18 @@ class SearchEngine {
    
 When the SearchEngine class is invovked from the command line with the command line argument 4000 it invokes the main() method in SearchEngine which inturn invokes the method server.start() providing the port and an instance of the handler (handler2) which will start the server at the required port. The server is listening for incomming messages at the specified port (4000). When we click
 http://localhost:4000/add-message?s=Hello in the browser, on receiving this message the webserver calls the handlerequest() method of the Handler2 class passing in the provided URI /add-message?s=Hello. This method checks if the URL path contains "/add-message". If such is the case , it then then extracts the given querystring and parses the querystring to extract the key and the value. It checks to see if the key is equal to "s" and then adds the given value to an arraylist. When this method returns it walks through all the entries in the arraylist and for each entry in the arraylist, it adds an entry into a stringbuffer, by concatenating the current index in the arraylist (incremented by 1) followed by a ". ", the string stored at that location, followed by a new line. It then converts the contents of the stringbuffer to a string and returns it as the return value (responds with the entire string so far).
-    
-    handleRequest(URI url) -> url.getPath() -> url.getQuery() -> call split on the query string to split it into key and value based on "=" -> call s.add() method on arraylist s to append the value -> create string buffer sb and call sb.append() method on the String buffer for each entry in arraylist s -> call sb.toString() -> call sb.StringFormat()
+
+```
+   1. handleRequest(URI url)
+   2. url.getPath() 
+   3. url.getQuery()
+   4. String[] parameters = url.getQuery.split("=")  <-- call split on the query string to split it into key and value based on "=" 
+   5. s.add(parameters[0]) <-- method on arraylist s to append the value parameters[0] 
+   6. StringBuffer sb = new StringBuffer() - > create string buffer sb
+   7. sb.append() method on the String buffer for each entry in arraylist s
+   8. sb.toString()
+   9. sb.StringFormat()
+```
 
 2. What are the relevant arguments to those methods, and the values of any relevant fields of the class?
    
