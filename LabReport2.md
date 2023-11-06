@@ -82,7 +82,7 @@ When the SearchEngine class is invovked from the command line with the command l
 
 2. What are the relevant arguments to those methods, and the values of any relevant fields of the class?
    
-The handlerequest method is provided the URI string as a parameter url /add-message?s=Hello. We extract the path from the passed in parameter url by calling the helper method getPath() method on the url -> url.gethPath(). The getPath() method does not take any parameters. If the path contains "/add-messages" we then call the getQuery() helper method on the url to get the query string. The method getQuery() does not take any parameter. We call the split method on the query string based on regex "=". split takes the regex "=" as parameter and splits the string into two parts. If the key matches "s" then we append the value to an arraylist s by calling the add() method on the arryalist. This doesn't take any parameters. When this method returns it walks through all the entries in the arraylist and for each entry in the arraylist, it adds an entry into a stringbuffer, by concatenating the current index in the arraylist (incremented by 1) followed by a ". ", the string stored at that location, followed by a new line. It then converts the contents of the stringbuffer to a string by called sb.toString() which does not take any parameters and returns it as the return value by calling String.Format with this string as the argument value (responds with the entire string so far).
+The handlerequest method is provided the URI string as a parameter url /add-message?s=Hello. We extract the path from the passed in parameter url by calling the helper method getPath() method on the url -> url.gethPath(). The getPath() method does not take any parameters. If the path contains "/add-messages" we then call the getQuery() helper method on the url to get the query string. The method getQuery() does not take any parameter. We call the split method on the query string based on regex "=". split takes the regex "=" as parameter and splits the string into two parts. If the key matches "s" then we append the value to an arraylist s by calling the add() method on the arraylist passing the value to add. When this method returns it walks through all the entries in the arraylist and for each entry in the arraylist, it adds an entry into a stringbuffer, by concatenating the current index in the arraylist (incremented by 1) followed by a ". ", the string stored at that location, followed by a new line. It then converts the contents of the stringbuffer to a string by called sb.toString() which does not take any parameters and returns it as the return value by calling String.Format with this string as the argument value (responds with the entire string so far).
 
 ```
 url <- /add-message?s=Hello
@@ -105,7 +105,7 @@ url <- /add-message?s=Hello
 url.getpath() <- /add-message
 url.getQuery() <- s=Hello
 String[] parameters = url.getQuery().split("=") <- parameters[0] = "s"; paraneters[1] = "Hello"
-s.add("hello") -> s["Hello"]  
+s.add("Hello") -> s["Hello"]  
 sb.append() -> "1. Hello"
 sb.toString() ->"1. Hello"
 Stringformat("1. Hello")
@@ -131,14 +131,14 @@ When we click http://localhost:4000/add-message?s="How%20are%20you" in the brows
 
 2. What are the relevant arguments to those methods, and the values of any relevant fields of the class?
    
-The handlerequest method is provided the URI string as a parameter url /add-message?s=How are you. We extract the path from the passed in parameter url by calling the helper method getPath() method on the url -> url.gethPath(). The getPath() method does not take any parameters. If the path contains "/add-messages" we then call the getQuery() helper method on the url to get the query string. The method getQuery() does not take any parameter. We call the split method on the query string based on regex "=". split takes the regex "=" as parameter and splits the string into two parts. If the key matches "s" then we append the value to an arraylist s by calling the add() method on the arryalist. This doesn't take any parameters. When this method returns it walks through all the entries in the arraylist and for each entry in the arraylist, it adds an entry into a stringbuffer, by concatenating the current index in the arraylist (incremented by 1) followed by a ". ", the string stored at that location, followed by a new line. It then converts the contents of the stringbuffer to a string by called sb.toString() which does not take any parameters and returns it as the return value by calling String.Format with this string as the argument value (responds with the entire string so far).
+The handlerequest method is provided the URI string as a parameter url /add-message?s=How are you. We extract the path from the passed in parameter url by calling the helper method getPath() method on the url -> url.gethPath(). The getPath() method does not take any parameters. If the path contains "/add-messages" we then call the getQuery() helper method on the url to get the query string. The method getQuery() does not take any parameter. We call the split method on the query string based on regex "=". split takes the regex "=" as parameter and splits the string into two parts. If the key matches "s" then we append the value to an arraylist s by calling the add() method on the arraylist passing in the value to add. When this method returns it walks through all the entries in the arraylist and for each entry in the arraylist, it adds an entry into a stringbuffer, by concatenating the current index in the arraylist (incremented by 1) followed by a ". ", the string stored at that location, followed by a new line. It then converts the contents of the stringbuffer to a string by called sb.toString() which does not take any parameters and returns it as the return value by calling String.Format with this string as the argument value (responds with the entire string so far).
 
 ```
-url <- /add-message?s=Hoe are you
+url <- /add-message?s=How%20are%20you
 url.getpath() <- /add-message
-url.getQuery() <- s=How ae you
-String[] parameters = url.getQuery().split("=") <- parameters[0] = "s"; paraneters[1] = "Hello"
-s.add("hello") -> s["Hello", "how are you"]  
+url.getQuery() <- s="How are you"
+String[] parameters = url.getQuery().split("=") <- parameters[0] = "s"; paraneters[1] = "How are you"
+s.add("How are you") -> s["Hello", "how are you"]  
 sb.append() -> "1. Hello"
                 "2. How are you"
 sb.toString() ->"1. Hello
