@@ -174,3 +174,7 @@ sb.toString() ->
 ![Image](public key.png)
 
 ![Image](terminal interaction.png)
+
+# PART 3
+
+In this lab, I learned how to generate private and public keys using ssh-keygen. I also learned how to log into ieng6 without being asked for a password. Furthermore, I learnt how a web server processes incoming requests and how to write code to respond to such requests. 
