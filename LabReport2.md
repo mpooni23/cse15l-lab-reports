@@ -7,7 +7,6 @@
 ```
 import java.io.IOException;
 import java.net.URI;
-import java.util.ArrayList;
 
 class Handler2 implements URLHandler {
     // The one bit of state on the server: a number that will be manipulated by
