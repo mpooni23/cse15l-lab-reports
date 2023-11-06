@@ -72,14 +72,14 @@ url <- /add-message?s=Hello
 url.getpath() <- /add-message
 url.getQuery() <- s=Hello
 String[] parameters = url.getQuery().split("=") <- parameters[0] = "s"; parameters[1] = "Hello"
-String s = "1. Hello"
+String s = "1. Hello\n"
 String.Format(s)
 ```
 
 **3. How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.**
 
-for each specific request, if it is a add-message request the passed in string is appended to the String s. Also the index is incremented to point to the next string to be appended.
-   
+For each specific request, if it is a add-message request the passed in string is appended to the String s. Also the index is incremented to point to the next string to be appended.
+When the path is just "\", the contents of the String s is returned, none of the values get affected.
 
 ![Image](Add message 2.png)
 
@@ -113,6 +113,9 @@ String.Format(s)
 For each specific request, if it is a add-message request the passed in String s declared as a property at the class instanxce level. The index also gets incremented to pointed to next string to be appended. 
 
 Initially String s = "1. Hello\n". Then the string s = "1. Hello\n2. How are you\n" on the second invocation.
+The index is initally 1. Then it get incremented to 2 on the first call. It then gets incremented to 3 on the second call pointing to the next string the next string to be appended.
+
+When the path is just "\", the contents of the String s is returned, none of the values get affected.
 
 # PART 2
 
