@@ -1,5 +1,7 @@
 # Week 3 - Servers and SSH Keys
 
+# PART 1
+
 # **1. Code for StringServer.java**
 
 ```
@@ -164,3 +166,11 @@ sb.toString() ->
 "1. Hello
  2. How are you"
 ```
+
+# PART 2
+
+![Image](private key.png)
+
+![Image](public key.png)
+
+![Image](terminal interaction.png)
