@@ -169,10 +169,13 @@ sb.toString() ->
 
 # PART 2
 
+# **1. Private Key**
 ![Image](private key.png)
 
+# **2. Public Key**
 ![Image](public key.png)
 
+# **3. Terminal Interaction**
 ![Image](terminal interaction.png)
 
 # PART 3
