@@ -137,7 +137,7 @@ The handlerequest method is provided the URI string as a parameter url /add-mess
 url <- /add-message?s=How%20are%20you
 url.getpath() <- /add-message
 url.getQuery() <- s="How are you"
-String[] parameters = url.getQuery().split("=") <- parameters[0] = "s"; paraneters[1] = "How are you"
+String[] parameters = url.getQuery().split("=") <- parameters[0] = "s"; parameters[1] = "How are you"
 s.add("How are you") -> s["Hello", "How are you"]  
 sb.append() -> "1. Hello"
                 "2. How are you"
