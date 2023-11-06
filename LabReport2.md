@@ -10,7 +10,7 @@ import java.util.ArrayList;
 class Handler2 implements URLHandler {
     // The one bit of state on the server: a number that will be manipulated by
     // various requests.
-    ArrayList<String> s = new ArrayList<String>();
+    ArrayList<String> strings = new ArrayList<String>();
 
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
@@ -18,30 +18,30 @@ class Handler2 implements URLHandler {
         } else if (url.getPath().contains("/add-message")) {
             String[] parameters = url.getQuery().split("=");
             if (parameters[0].equals("s")) {
-                s.add(parameters[1]);
+                strings.add(String.format(parameters[1]));
                 StringBuffer sb = new StringBuffer();
-                for (int index=0; index < s.size(); index++) {
-                    sb.append((index+1) + ". " + s.get(index) + "\n");
+                for (int index = 0; index < strings.size(); index++) {
+                    sb.append((index + 1) + ". " + strings.get(index) + "\n");
                 }
                 return String.format(sb.toString());
             }
         } else if (url.getPath().contains("/search")) {
             String[] parameters = url.getQuery().split("=");
             if (parameters[0].equals("s")) {
-                return find((String) parameters[1]);
+                return find(String.format(parameters[1]));
             }
         }
         return "404 Not Found!";
     }
-    
+
     public String find(String searchString) {
-        ArrayList<String> temp = new ArrayList<String>();
-        for (int index=0; index < s.size(); index++){
-            if (s.get(index).indexOf(searchString) > 0){
-                temp.add(s.get(index));
+        ArrayList<String> newStrings = new ArrayList<>();
+        for (int index =0; index < strings.size(); index++) {
+            if (strings.get(index).contains(searchString)) {
+                newStrings.add(strings.get(index));
             }
         }
-        return String.format(temp.toString());
+        return newStrings.toString();
     }
 }
 
