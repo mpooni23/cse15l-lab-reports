@@ -64,13 +64,99 @@ Hence all the elements in the old array will be set to 0.  Als0 the function inc
 1. find . -name "Chapter*.*" -print
 
 ```
+./911report/chapter-13.4.txt
+./911report/chapter-13.5.txt
+./911report/chapter-13.1.txt
+./911report/chapter-13.2.txt
+./911report/chapter-13.3.txt
+./911report/chapter-3.txt
+./911report/chapter-2.txt
+./911report/chapter-1.txt
+./911report/chapter-5.txt
+./911report/chapter-6.txt
+./911report/chapter-7.txt
+./911report/chapter-9.txt
+./911report/chapter-8.txt
+./911report/chapter-12.txt
+./911report/chapter-10.txt
+./911report/chapter-11.txt
+```
+2. find . -type d -print
 
 ```
-3. find . -type d -print
-4. find . -type d -size +1k 
-5. find . -type f -name "chapter*.*" -print 
-6. find . -name "Chapter*.*" -exec wc -l {} \;
-7. find . -name "*.*" -exec grep -nH "Tuesday, September 11, 2001" {} \;
-8. find . -name "*.java" -exec grep -nH "Collections.sort" {} \; 
+.
+./government
+./government/About_LSC
+./government/Env_Prot_Agen
+./government/Alcohol_Problems
+./government/Gen_Account_Office
+./government/Post_Rate_Comm
+./government/Media
+./plos
+./biomed
+./911report
+```
+3. find . -type d -size +1k
+   
+```
+./government/Gen_Account_Office
+./government/Media
+./plos
+./biomed
 
+```
+4. find . -type f -name "chapter*.*" -print
+   
+```
+./911report/chapter-13.4.txt
+./911report/chapter-13.5.txt
+./911report/chapter-13.1.txt
+./911report/chapter-13.2.txt
+./911report/chapter-13.3.txt
+./911report/chapter-3.txt
+./911report/chapter-2.txt
+./911report/chapter-1.txt
+./911report/chapter-5.txt
+./911report/chapter-6.txt
+./911report/chapter-7.txt
+./911report/chapter-9.txt
+./911report/chapter-8.txt
+./911report/chapter-12.txt
+./911report/chapter-10.txt
+./911report/chapter-11.txt
+```
+5. find . -name "Chapter*.*" -exec wc -l {} \;
+   
+```
+ 2941 ./911report/chapter-13.4.txt
+    3237 ./911report/chapter-13.5.txt
+    1089 ./911report/chapter-13.1.txt
+    1236 ./911report/chapter-13.2.txt
+    1718 ./911report/chapter-13.3.txt
+    3159 ./911report/chapter-3.txt
+     948 ./911report/chapter-2.txt
+     731 ./911report/chapter-1.txt
+    1204 ./911report/chapter-5.txt
+    1898 ./911report/chapter-6.txt
+    1579 ./911report/chapter-7.txt
+    1885 ./911report/chapter-9.txt
+    1036 ./911report/chapter-8.txt
+    1539 ./911report/chapter-12.txt
+     603 ./911report/chapter-10.txt
+     817 ./911report/chapter-11.txt
+
+```
+6. find . -name "*.*" -exec grep -nH "Tuesday, September 11, 2001" {} \;
+    
+```
+grep: .: Is a directory
+./911report/chapter-1.txt:6:    Tuesday, September 11, 2001, dawned temperate and nearly cloudless in the eastern United States. Millions of men and women readied themselves for work. Some made their way to the Twin Towers, the signature structures of the World Trade Center complex in New York City. Others went to Arlington, Virginia, to the Pentagon. Across the Potomac River, the United States Congress was back in session. At the other end of Pennsylvania Avenue, people began to line up for a White House tour. In Sarasota, Florida, President George W. Bush went for an early morning run.
+```
+7. find . -name "*.java" -exec grep -nH "Tuesday" {} \;
+
+```
+
+```
+Sources:
+https://unix.stackexchange.com/questions/638335/find-command-size-behavior
 
