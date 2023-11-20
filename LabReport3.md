@@ -28,7 +28,11 @@ A failure-inducing input for the buggy program, as a JUnit test and any associat
 
 ![Image](Symptom.png)
 
+The symptom appears to say that the arrays differed at the element location zero. This means there is an mismatch between the expected output and actual output
+
 # **4. The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)**
+
+The before code is as follows :
 
 ```
     static int[] reversed(int[] arr) {
@@ -40,6 +44,8 @@ A failure-inducing input for the buggy program, as a JUnit test and any associat
     }
 ```
 
+The fix is given below :
+
 ```
     static int[] reversed(int[] arr) {
       int[] newArray = new int[arr.length];
@@ -50,14 +56,21 @@ A failure-inducing input for the buggy program, as a JUnit test and any associat
     }
 ```
 
+The reason for the bug is even though a newArray has been created with the same length as the old array arr, the assignment withint the loop is incorrect. The old array is being assingmed values for the newly created array.
+Hence all the elements in the old array will be set to 0.  Als0 the function incorrectly return the old array.  As part the fix, the assignments is reversed where the new array is assigned values from the old arrya and the contents of the new array is being returned from the function.
+
 # PART 2
 
 1. find . -name "Chapter*.*" -print
-2. find . -type d -print
-3. find . -type d -size +1k 
-4. find . -type f -name "chapter*.*" -print 
-5. find . -name "Chapter*.*" -exec wc -l {} \;
-6. find . -name "*.*" -exec grep -nH "Tuesday, September 11, 2001" {} \;
-7. find . -name "*.java" -exec grep -nH "Collections.sort" {} \; 
+
+```
+
+```
+3. find . -type d -print
+4. find . -type d -size +1k 
+5. find . -type f -name "chapter*.*" -print 
+6. find . -name "Chapter*.*" -exec wc -l {} \;
+7. find . -name "*.*" -exec grep -nH "Tuesday, September 11, 2001" {} \;
+8. find . -name "*.java" -exec grep -nH "Collections.sort" {} \; 
 
 
