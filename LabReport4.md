@@ -34,12 +34,24 @@ step 9.Commit and push the resulting change to your Github account (you can pick
 
 # **7. Edit the code file to fix the failing test**
 
-![Image](Edit failing tests.png)
+![Image](editing vi file.png)
+![Image](vi ListExamples.png)
+
+**Keys Pressed**: To complete this step, what I did was type ```vi  ListExamples.java``` followed by pressing the ```<enter>``` key. Then in the vi editor I pressed the ```k``` key 6 times, and press ```l``` key 11 times. Then I pressed the ```x``` key to delete the 1 in index1 and it was followed by followed by pressing the ```i``` key to insert a 2 to change index1 to index2. Next, you need to press ```<escape>``` key, followed by typing ```:wq```.
 
 # **8 Run the tests, demonstrating that they now succeed**
 
-![Image](Show succeeding tests)
+![Image](Show succeeding tests.png)
+
+ I then ran the test.sh file by typing ```./test.sh``` followed by the ```<enter>``` command. This resulted in all the tests succeeding, as shown in the resulting screenshot.
 
 # **9 Commit and push the resulting change to your Github account (you can pick any commit message!)**
 
-![Image](Commit and push to github account)
+![Image](Pre commit.png)
+
+![Image](commit.png)
+
+![Image](post commit.png)
+**Keys Pressed**: To complete this step, what I did was type ```git add ListExamples.java``` followed by pressing ```<enter>``` key. This is followed by entering ```git commit``` followed by pressing the ```<enter>``` key. This results in the ListExamples.java file being committed.
+
+14 j's followed by an a, and then pressing enter. 
