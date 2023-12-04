@@ -269,6 +269,8 @@ class ListExamples {
     return result;
   }
 }
-[cs15lfa23nz@ieng6-201]:lab7:310$ 
-
 ```
+
+# PART 2
+
+One of the cool things I learnt in this project was how to use git. I learnt how to add files, check-in and check-out files from the resposiotry. I also learnt on how to use the git desktop, The second thing I learnt was how to use the find and grep commands. They have a number of command line options which are really powerful. The most important thing I learnt was on how to use vim from the command line. vim is a very interesting editor with lot of features. The final thing I learnt was how to create and run shell scripts. Ofcourse the who process of add commands to a webserver is also something I really learnt.
