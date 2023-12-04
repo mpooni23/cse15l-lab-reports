@@ -5,6 +5,7 @@
 For this lab report, we are asked to describe a debugging scenario as a conversation on Edstem. It should start with a original post from a student showing a symptom and a description of a guess at some possible bug with some sense of what the failure-inducing input is. It should have a response from a TA asking a leading question or suggesting a command to try. There should be a screenshot/terminal output showing what information the student got from trying the TAs suggestion, and a clear description of what the bug is. It should involve at least a Java file and a bash script. Describing the bug should involve reading some output at the terminal resulting from running one or more commands.
 
 # **1.  EdStem Post and Response**
+
 Post from Student:
 Hello, I am experiencing an issue with my code, where I am trying to merge two sorted lists of integers into a single list, by calling a method called **merge**. The **merge** method takes the two sorted lists as its parameters. The merge algorithm runs a while loop, running from the beginning to the lengths of the lists comparing elements in the first list with the elements in the second list. It starts the comparison starting from index 0 of the first list, with the element at index 0 of the second list. The smaller of the two elements gets added to a new combined list and its inex fgets incremented. Also the index of the list from which the element was copied to the new combined list gets incremented. However, I seem to be running into a series of bugs while running the Junits. It says "array lengths differed, expected.length=4 actual.length=2;". I can't decipher how to fix them. My guess here is definitely something to do with the way the integers are being added to the merged list. Any advice would be helpful! I've included the output of the junit tests below to showcase the bugs.
 
@@ -61,8 +62,9 @@ One of the most obvious reasons this could happen is if there is a bug in increm
 Best, 
 Your TA
 
-# **3. **
+# **3. Another screenshot/terminal output showing what information the student got from trying that, and a clear description of what the bug is.**
 From Student:
+
 Hi TA, thank you for your suggestions. I inspected my code and I observed that the incrementing of the indices of the arrays was happening properly. It so happens that the while condition has a bug. If we are running through both the lengths of the list, then we might encounter the end of the shorter list ealier than the logner one. But I was surprised in some scenarios I found we were reaching the end of long list earlier than compared to th shorter list.
 In the worst case if all the elements of the first list is smaller than the second list, we would reach the end of thefirst lit earlier when ther are still elements in the second list. similarly if the elemnts in the second list are samller than the elements in the first list we might reach reach the end of the second list earlier. So it is a problems where the elements in the first list or the second list are not being copied to the combined list on an early termination of the other list. So I run a loop to copy over the remaining elements from the first list or second list into the combined array based on early while loop termination. This solved the issue.
 
