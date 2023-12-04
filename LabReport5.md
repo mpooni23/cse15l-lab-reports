@@ -1,18 +1,16 @@
-# Week 4 - Testing and Files
+# Week 9 - Putting it All Together
 
 # PART 1
 
+# **For this lab report, we are asked to describe a debugging scenario as a conversation on Edstem. It should start with a original post from a student showing a symptom and a description of a guess at some possible bug with some sense of what the failure-inducing input is. It should have a response from a TA asking a leading question or suggesting a command to try. There should be a screenshot/terminal output showing what information the student got from trying the TAs suggestion, and a clear description of what the bug is. It should involve at least a Java file and a bash script. Describing the bug should involve reading some output at the terminal resulting from running one or more commands.
 
-# **1. A failure-inducing input for the buggy program, as a JUnit test and any associated code (write it as a code block in Markdown)**
+# **1. **
 
-# **2. An input that doesn’t induce a failure, as a JUnit test and any associated code**
+# **2. **
 
-# **3. The symptom, as the output of running the tests (provide it as a screenshot of running JUnit with at least the two inputs above)**
-
-![Image](Symptom.png)
+# **3. **
 
 # **4. The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)**
-
 
 # PART 2
 
