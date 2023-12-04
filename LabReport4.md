@@ -16,11 +16,13 @@ step 9.Commit and push the resulting change to your Github account (you can pick
 
 # **4. Log into ieng6**
 
-![Image](Log into ieng6.png)
+![Image](Log into ieng6)
+**Keys Pressed**: ```ssh cs15lfa23nz@ieng6.ucsd.edu``` was the command typed in at the command prompt followed by pressing the ```<enter>``` key to log in to the ieng6 account/computer. 
 
 # **5. Clone your fork of the repository from your Github account (using the SSH URL)**
 
 ![Image](Clone the forked repo)
+**Keys Pressed**: To complete this step, what I did was type in (on my keyboard)  ```git clone git@github.com:mpooni23/lab7.git```. Then I pressed the ```<enter>``` key to run the command, and the resulting screenshot is what was demonstrated (failure in one of the tests).
 
 # **6. Run the tests, demonstrating that they fail**
 
