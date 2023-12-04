@@ -34,8 +34,8 @@ step 9.Commit and push the resulting change to your Github account (you can pick
 
 # **7. Edit the code file to fix the failing test**
 
-![Image](editing vi file.png)
-![Image](vi ListExamples.png)
+![Image](editing vim file.png)
+![Image](vim ListExamples.png)
 
 **Keys Pressed**: To complete this step, what I did was type ```vi  ListExamples.java``` on the command prompt followed by pressing the ```<enter>``` key. Then in the vi editor I pressed the ```k``` key 6 times, and press ```l``` key 11 times. Then I pressed the ```x``` key to delete the 1 in index1 and it was followed by followed by pressing the ```i``` key to insert a 2 to change index1 to index2. Next, you need to press ```<escape>``` key, followed by typing ```:wq```.
 
