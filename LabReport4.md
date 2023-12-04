@@ -37,7 +37,7 @@ step 9.Commit and push the resulting change to your Github account (you can pick
 ![Image](editing vi file.png)
 ![Image](vi ListExamples.png)
 
-**Keys Pressed**: To complete this step, what I did was type ```vi  ListExamples.java``` followed by pressing the ```<enter>``` key. Then in the vi editor I pressed the ```k``` key 6 times, and press ```l``` key 11 times. Then I pressed the ```x``` key to delete the 1 in index1 and it was followed by followed by pressing the ```i``` key to insert a 2 to change index1 to index2. Next, you need to press ```<escape>``` key, followed by typing ```:wq```.
+**Keys Pressed**: To complete this step, what I did was type ```vi  ListExamples.java``` on the command prompt followed by pressing the ```<enter>``` key. Then in the vi editor I pressed the ```k``` key 6 times, and press ```l``` key 11 times. Then I pressed the ```x``` key to delete the 1 in index1 and it was followed by followed by pressing the ```i``` key to insert a 2 to change index1 to index2. Next, you need to press ```<escape>``` key, followed by typing ```:wq```.
 
 # **8 Run the tests, demonstrating that they now succeed**
 
@@ -52,6 +52,4 @@ step 9.Commit and push the resulting change to your Github account (you can pick
 ![Image](commit.png)
 
 ![Image](post commit.png)
-**Keys Pressed**: To complete this step, what I did was type ```git add ListExamples.java``` followed by pressing ```<enter>``` key. This is followed by entering ```git commit``` followed by pressing the ```<enter>``` key. This results in the ListExamples.java file being committed.
-
-14 j's followed by an a, and then pressing enter. 
+**Keys Pressed**: To complete this step, what I did was type ```git add ListExamples.java``` on the command prompt followed by pressing the ```<enter>``` key. This is followed by entering the command ```git commit``` followed by pressing the ```<enter>``` key. once the edito pops up I pressed the ```j``` key 14 times followed by an a, and then pressing enter. Then I typed ```Changed list1 to list2```.  Next, I pressed ```<escape>``` key, followed by typing ```:wq```. The results are shown in resulting screenshot.
