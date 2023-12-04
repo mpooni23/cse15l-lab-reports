@@ -195,24 +195,80 @@ Tests run: 2,  Failures: 2
 # **4d. A description of what to edit to fix the bug**
 
 ```
-[cs15lfa23nz@ieng6-201]:lab7:292$ git diff
+[cs15lfa23nz@ieng6-201]:lab7:304$ git diff ListExamples.java
 diff --git a/ListExamples.java b/ListExamples.java
-index 82810ee..4dd46f2 100644
+index 4dd46f2..7c67c21 100644
 --- a/ListExamples.java
 +++ b/ListExamples.java
-@@ -34,15 +34,6 @@ class ListExamples {
+@@ -34,8 +34,14 @@ class ListExamples {
          index2 += 1;
        }
      }
--    while(index1 < list1.size()) {
--      result.add(list1.get(index1));
--      index1 += 1;
--    }
--    while(index2 < list2.size()) {
--      result.add(list2.get(index2));
--      // change index1 below to index2 to fix test
--      index2 += 1;
--    }
++    while(index1 < list1.size()) {
++      result.add(list1.get(index1));
++      index1 += 1;
++    }
++    while(index2 < list2.size()) {
++      result.add(list2.get(index2));
++      index2 += 1;
++    }
      return result;
    }
+-
+-
+ }
+```
+# **4e. contents of each file before fixing the bug**
+
+```
+[cs15lfa23nz@ieng6-201]:lab7:309$ cat ListExamples.java
+import java.util.ArrayList;
+import java.util.List;
+
+interface StringChecker { boolean checkString(String s); }
+
+class ListExamples {
+
+  // Returns a new list that has all the elements of the input list for which
+  // the StringChecker returns true, and not the elements that return false, in
+  // the same order they appeared in the input list;
+  static List<String> filter(List<String> list, StringChecker sc) {
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(0, s);
+      }
+    }
+    return result;
+  }
+
+
+  // Takes two sorted list of strings (so "a" appears before "b" and so on),
+  // and return a new list that has all the strings in both list in sorted order.
+  static List<String> merge(List<String> list1, List<String> list2) {
+    List<String> result = new ArrayList<>();
+    int index1 = 0, index2 = 0;
+    while(index1 < list1.size() && index2 < list2.size()) {
+      if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
+        result.add(list1.get(index1));
+        index1 += 1;
+      }
+      else {
+        result.add(list2.get(index2));
+        index2 += 1;
+      }
+    }
+    while(index1 < list1.size()) {
+      result.add(list1.get(index1));
+      index1 += 1;
+    }
+    while(index2 < list2.size()) {
+      result.add(list2.get(index2));
+      index2 += 1;
+    }
+    return result;
+  }
+}
+[cs15lfa23nz@ieng6-201]:lab7:310$ 
+
 ```
