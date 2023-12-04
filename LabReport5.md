@@ -53,7 +53,7 @@ Tests run: 2,  Failures: 2
 
 [cs15lfa23nz@ieng6-201]:lab7:263$
 ```
-# **2. Response From TA **
+# **2. Response From TA**
 
 Hi there! Can you please send me a private post with your code listing. It would really help me to try it out on my side to figure out any issues. From the errors that you are able to see in your junits, it is obvious that the length of the combined array is lesser than the expected size. Let's analyze this a little bit.
 
@@ -144,7 +144,7 @@ class ListExamples {
   }
 }
 ```
-# **4c. full command line (or lines) you ran to trigger the bug**
+# **4c. Full command line (or lines) you ran to trigger the bug**
 
 ```
 [cs15lfa23nz@ieng6-201]:lab7:291$ ./test.sh
@@ -218,7 +218,7 @@ index 4dd46f2..7c67c21 100644
 -
  }
 ```
-# **4e. contents of each file before fixing the bug**
+# **4e. Contents of each file after fixing the bug**
 
 ```
 [cs15lfa23nz@ieng6-201]:lab7:309$ cat ListExamples.java
