@@ -58,24 +58,87 @@ Hi there! Can you please send me a private post with your code listing. It would
 
 One of the most obvious reasons this could happen is if there is a bug in incrementing the indices of the arrays. Are you correctly incrementing the indices of the list from which an element has been promoted to the combined list ? Secondly, also see if the legnths of your sorted lists are different. If not, while comparing and promoting elements to the combined array, you could see a premature termination as the shorter list might run out of elements. These are the few points I might consider initially based on your error description.
 
-Best, TA
+Best, 
+Your TA
 
 # **3. **
+From Student:
+Hi TA, thank you for your suggestions. I inspected my code and I observed that the incrementing of the indices of the arrays was happening properly. It so happens that the while condition has a bug. If we are running through both the lengths of the list, then we might encounter the end of the shorter list ealier than the logner one. But I was surprised in some scenarios I found we were reaching the end of long list earlier than compared to th shorter list.
+In the worst case if all the elements of the first list is smaller than the second list, we would reach the end of thefirst lit earlier when ther are still elements in the second list. similarly if the elemnts in the second list are samller than the elements in the first list we might reach reach the end of the second list earlier. So it is a problems where the elements in the first list or the second list are not being copied to the combined list on an early termination of the other list. So I run a loop to copy over the remaining elements from the first list or second list into the combined array based on early while loop termination. This solved the issue.
 
-# **4. The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)**
+```
+[cs15lfa23nz@ieng6-201]:lab7:271$ ./test.sh
+JUnit version 4.13.2
+..
+Time: 0.015
 
-# PART 2
+OK (2 tests)
 
-1. find . -name "Chapter*.*" -print
+[cs15lfa23nz@ieng6-201]:lab7:272$
+```
 
-2. find . -type d -print
+# **4a. The file & directory structure needed**
+```
+[cs15lfa23nz@ieng6-201]:lab7:282$ ls -lR
+.:
+total 28
+-rw-r----- 1 cs15lfa23nz ieng6_cs15lfa23 1461 Dec  3 22:50 ListExamples.class
+-rw-r----- 1 cs15lfa23nz ieng6_cs15lfa23 1435 Dec  3 22:50 ListExamples.java
+-rw-r----- 1 cs15lfa23nz ieng6_cs15lfa23 1095 Dec  3 22:50 ListExamplesTests.class
+-rw-r----- 1 cs15lfa23nz ieng6_cs15lfa23  747 Dec  3 18:16 ListExamplesTests.java
+-rw-r----- 1 cs15lfa23nz ieng6_cs15lfa23  152 Dec  3 22:50 StringChecker.class
+drwxr-s--- 2 cs15lfa23nz ieng6_cs15lfa23 4096 Dec  3 18:16 lib
+-rwxr----- 1 cs15lfa23nz ieng6_cs15lfa23  169 Dec  3 18:16 test.sh
 
-3. find . -type d -size +1k
-   
-4. find . -type f -name "chapter*.*" -print
-   
-5. find . -name "Chapter*.*" -exec wc -l {} \;
-   
-6. find . -name "*.*" -exec grep -nH "Tuesday, September 11, 2001" {} \;
-    
-7. find . -name "*.java" -exec grep -nH "Tuesday" {} \;
+./lib:
+total 428
+-rw-r----- 1 cs15lfa23nz ieng6_cs15lfa23  45024 Dec  3 18:16 hamcrest-core-1.3.jar
+-rw-r----- 1 cs15lfa23nz ieng6_cs15lfa23 384581 Dec  3 18:16 junit-4.13.2.jar
+[cs15lfa23nz@ieng6-201]:lab7:283$
+```
+
+# **4b. The contents of each file before fixing the bug**
+
+ListExamples.java 
+
+```
+import java.util.ArrayList;
+import java.util.List;
+
+interface StringChecker { boolean checkString(String s); }
+
+class ListExamples {
+
+  // Returns a new list that has all the elements of the input list for which
+  // the StringChecker returns true, and not the elements that return false, in
+  // the same order they appeared in the input list;
+  static List<String> filter(List<String> list, StringChecker sc) {
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(0, s);
+      }
+    }
+    return result;
+  }
+
+
+  // Takes two sorted list of strings (so "a" appears before "b" and so on),
+  // and return a new list that has all the strings in both list in sorted order.
+  static List<String> merge(List<String> list1, List<String> list2) {
+    List<String> result = new ArrayList<>();
+    int index1 = 0, index2 = 0;
+    while(index1 < list1.size() && index2 < list2.size()) {
+      if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
+        result.add(list1.get(index1));
+        index1 += 1;
+      }
+      else {
+        result.add(list2.get(index2));
+        index2 += 1;
+      }
+    }
+    return result;
+  }
+}
+```
