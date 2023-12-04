@@ -22,7 +22,7 @@ step 9.Commit and push the resulting change to your Github account (you can pick
 
 # **5. Clone your fork of the repository from your Github account (using the SSH URL)**
 
-![Image](Clone the forked repo.png)
+![Image](clone the forked repo.png)
 
 **Keys Pressed**: To complete this step, what I did was type in (on my keyboard)  ```git clone git@github.com:mpooni23/lab7.git```. Then I pressed the ```<enter>``` key to run the command, and the resulting screenshot demonstrates the cloning of the forked repository.
 
