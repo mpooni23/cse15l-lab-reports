@@ -142,3 +142,75 @@ class ListExamples {
   }
 }
 ```
+# **4c. full command line (or lines) you ran to trigger the bug**
+
+```
+[cs15lfa23nz@ieng6-201]:lab7:291$ ./test.sh
+++ javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar ListExamples.java ListExamplesTests.java
+++ java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests
+JUnit version 4.13.2
+.E.E
+Time: 0.021
+There were 2 failures:
+1) testMerge1(ListExamplesTests)
+array lengths differed, expected.length=4 actual.length=2; arrays first differed at element [2]; expected:<x> but was:<end of array>
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:89)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:28)
+        at org.junit.Assert.internalArrayEquals(Assert.java:534)
+        at org.junit.Assert.assertArrayEquals(Assert.java:285)
+        at org.junit.Assert.assertArrayEquals(Assert.java:300)
+        at ListExamplesTests.testMerge1(ListExamplesTests.java:12)
+        ... 9 trimmed
+Caused by: java.lang.AssertionError: expected:<x> but was:<end of array>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:87)
+        ... 15 more
+2) testMerge2(ListExamplesTests)
+array lengths differed, expected.length=6 actual.length=4; arrays first differed at element [4]; expected:<d> but was:<end of array>
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:89)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:28)
+        at org.junit.Assert.internalArrayEquals(Assert.java:534)
+        at org.junit.Assert.assertArrayEquals(Assert.java:285)
+        at org.junit.Assert.assertArrayEquals(Assert.java:300)
+        at ListExamplesTests.testMerge2(ListExamplesTests.java:19)
+        ... 9 trimmed
+Caused by: java.lang.AssertionError: expected:<d> but was:<end of array>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:87)
+        ... 15 more
+
+FAILURES!!!
+Tests run: 2,  Failures: 2
+
+[cs15lfa23nz@ieng6-201]:lab7:292$
+```
+# **4d. A description of what to edit to fix the bug**
+
+```
+[cs15lfa23nz@ieng6-201]:lab7:292$ git diff
+diff --git a/ListExamples.java b/ListExamples.java
+index 82810ee..4dd46f2 100644
+--- a/ListExamples.java
++++ b/ListExamples.java
+@@ -34,15 +34,6 @@ class ListExamples {
+         index2 += 1;
+       }
+     }
+-    while(index1 < list1.size()) {
+-      result.add(list1.get(index1));
+-      index1 += 1;
+-    }
+-    while(index2 < list2.size()) {
+-      result.add(list2.get(index2));
+-      // change index1 below to index2 to fix test
+-      index2 += 1;
+-    }
+     return result;
+   }
+```
